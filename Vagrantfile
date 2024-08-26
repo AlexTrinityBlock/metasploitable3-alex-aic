@@ -13,6 +13,8 @@ Vagrant.configure("2") do |config|
     ub1404.vm.network "forwarded_port", guest: 22, host: 10022, host_ip: "0.0.0.0"
     # Apache
     ub1404.vm.network "forwarded_port", guest: 80, host: 10080, host_ip: "0.0.0.0"
+    # Apache continuum
+    ub1404.vm.network "forwarded_port", guest: 8080, host: 18080, host_ip: "0.0.0.0"
     # MySQL
     ub1404.vm.network "forwarded_port", guest: 3306, host: 13306, host_ip: "0.0.0.0"
     # Custom SSH configuration
