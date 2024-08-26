@@ -7,14 +7,14 @@ Vagrant.configure("2") do |config|
     ub1404.vm.box = "rapid7/metasploitable3-ub1404"
     ub1404.vm.hostname = "metasploitable3-ub1404"
     # Custom port forwarding
+    # FTP
+    ub1404.vm.network "forwarded_port", guest: 21, host: 10021, host_ip: "0.0.0.0"
     # SSH
     ub1404.vm.network "forwarded_port", guest: 22, host: 10022, host_ip: "0.0.0.0"
-    # GlassFish
-    ub1404.vm.network "forwarded_port", guest: 4848, host: 4848, host_ip: "0.0.0.0"
-    ub1404.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "0.0.0.0"
-    ub1404.vm.network "forwarded_port", guest: 8181, host: 8181, host_ip: "0.0.0.0"
-    # Apache Struts & Tomcat
-    ub1404.vm.network "forwarded_port", guest: 8282, host: 8282, host_ip: "0.0.0.0"
+    # Apache
+    ub1404.vm.network "forwarded_port", guest: 80, host: 10080, host_ip: "0.0.0.0"
+    # MySQL
+    ub1404.vm.network "forwarded_port", guest: 3306, host: 13306, host_ip: "0.0.0.0"
     # Custom SSH configuration
     config.ssh.username = 'vagrant'
     config.ssh.password = 'vagrant'
