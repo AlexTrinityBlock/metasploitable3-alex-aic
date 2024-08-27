@@ -40,3 +40,16 @@ sudo touch /etc/vbox/networks.conf
 echo "* 10.0.0.0/8 192.168.0.0/16 172.16.0.0/12" | sudo tee -a /etc/vbox/networks.conf
 ```
 
+下載並且啟用 Vagrant
+
+```bash
+mkdir metasploitable3-workspace
+cd metasploitable3-workspace
+curl -O https://raw.githubusercontent.com/AlexTrinityBlock/metasploitable3-alex-aic/master/Vagrantfile && vagrant up
+```
+
+或者修改為，僅開啟 Ubuntu 靶機
+
+```bash
+curl -O https://raw.githubusercontent.com/AlexTrinityBlock/metasploitable3-alex-aic/master/Vagrantfile && vagrant up ub1404
+```
